@@ -1,0 +1,876 @@
+#+TITLE:     GNU Emacs Contributor Guide
+#+AUTHOR:    Xue Fuqiao
+#+EMAIL:     xfq DOT free AT gmail DOT com
+#+DESCRIPTION: Find out how you can get involved to help make a difference in the lives of users everywhere in the future.
+#+KEYWORDS: Emacs, development
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 toc:t
+
+* Contributing to Emacs
+  GNU Emacs is a collaborative project and we encourage contributions
+  from anyone.  People involved with the Emacs community have
+  differing political, social, economic and ethnic backgrounds.  We
+  work across timezones, languages, and cultures.  The success of
+  Emacs depends on participation from people like you.  Find out how
+  you can get involved to help make a difference in the lives of users
+  everywhere in the future.
+
+  Copyright (C) 2013 Xue Fuqiao
+  
+  Permission is granted to copy, distribute and/or modify this
+  document under the terms of the GNU Free Documentation License,
+  Version 1.3 or any later version published by the Free Software
+  Foundation; with no Invariant Sections, no Front-Cover Texts, and no
+  Back-Cover Texts.  See http://www.gnu.org/copyleft/fdl.html.
+
+
+* Helping Users
+#+INDEX: help
+  Emacs have a community of enthusiastic volunteers trying to support
+  our users around the globe.  Join us for an incredible adventure!
+** Answering questions
+   From hardcore Lisp developers to "how do I install Emacs" first
+   time users, everybody needs your help in the community!  Share your
+   Emacs knowledge by pointing people to the right help resources and
+   providing troubleshooting steps for their individual questions.
+*** Finding questions
+    You can find questions from mailing lists (like [[https://lists.gnu.org/mailman/listinfo/help-gnu-emacs][help-gnu-emacs]] and
+    [[https://lists.gnu.org/mailman/listinfo/help-emacs-windows][help-emacs-windows]]), newsgroups (like comp.emacs and
+    gnu.emacs.help), websites (like [[http://stackoverflow.com/questions/tagged/?tagnames=emacs&sort=newest][Stack Overflow]]), and IRC channels
+    (like =#emacs= and =#gnus= on Freenode).
+*** Finding answers
+    Rather than trying to figure out the user's problem by yourself
+    every time, first search to see if it has come up before.  Try to
+    search the Emacs manuals before anything else.  If the manuals
+    don't have your answers, you can use other sources.  Some good
+    ones:
+    - [[https://savannah.gnu.org/mail/?group=emacs][Mailing list threads]]
+    - [[http://www.gnu.org/manual/manual.html][Other GNU Manuals]]
+    - [[http://debbugs.gnu.org/][GNU Bug Tracker]]
+*** Doing investigation
+    If you can't find previous cases of the issue happening, here are
+    some tips on figuring out the problem yourself.
+
+    - Consider the user's OS and Emacs version.
+    - Take a look at the user's window system, configure options,
+      major/minor modes, recent input, recent messages, load-path
+      shadows, and elisp libraries.  In particular, watch for outdated
+      libraries that are known to cause problems.
+    - Try to isolate the cause of the problem.
+      + Does the problem happen on your computer?
+      + Does the problem happen when security software is temporarily
+        disabled?
+    - If you find out the solution, consider adding it to the Emacs
+      FAQ.
+*** Posting replies
+    - Be nice.  If you feel that a post has crossed the line, report
+      it to the Emacs maintainers.
+
+    - Make a judgment on a user's experience based on their posts.  For
+      example, not all users know how to use regexp.  When in doubt,
+      please explain more.
+
+    - Don't be intimidated.  Don't let a bad experience stop you from
+      getting involved.  Just relax and think about why you were
+      snubbed and if there's anything that you should be careful about
+      before participating in another conversation.
+
+    - Look at what OS the user is using and cater your reply to that.
+      For example, GNU/Linux users won't have a =C:\Program Files=.
+*** Following up
+    The answers you give may be incorrect, or the user may have some
+    follow up questions for you.  In either case, it's useful to both
+    you and the user that your conversation continues.
+
+
+* Mailing Lists
+#+INDEX: mailing list
+  - Subscribing to the [[http://lists.gnu.org/mailman/listinfo/emacs-devel][emacs-devel]] mailing list is a good idea.  It's
+    a mailing list for communications among Emacs developers.
+
+  - Always read the entire thread before replying.
+
+  - Do your best to always assume the best of the poster.  Sometimes,
+    a non-native speaker (like me) may appear to have an offensive
+    "tone" in the post where no offense is meant.
+
+  - Don't cross-post to multiple lists. Communicating well on mailing
+    lists means knowing where and when to post items.  If you have any
+    doubts regarding what is appropriate, you can ask me.
+
+  - If you are offended by a response or post, walk-away. Do not
+    respond when you are angry.
+
+  - Don't post chain letters, marketing messages or other types of
+    non-topical spam.
+
+
+* Testing
+#+INDEX: testing
+  Testing is a great way to get familiar with our code and tools.
+  Pick a fixed bug from the database, write a test case to make sure
+  it stays fixed.  Or pick your favorite programming major-mode, and
+  write a test for its indentation.  Or a version control backend, and
+  write a test for its status parser.  Or validate web pages of Emacs.
+  Etc.
+
+  If you would like to help pretest Emacs releases to assure they work
+  well, or if you would like to work on improving Emacs, please
+  contact the maintainers at [[mailto:emacs-devel@gnu.org][emacs-devel@gnu.org]].  A pretester should
+  be prepared to investigate bugs as well as report them.
+
+
+* Coding
+#+INDEX: coding
+  Developers can help Emacs by adding new features, making our
+  technology cleaner and simpler and making development easier for
+  others.
+
+** What skills do I need?
+#+INDEX: skill
+   Emacs is a large program and we are happy to receive contributors
+   with very different skills.
+
+   - If you know Lisp, for instance, you can contribute to the core
+     layers of Emacs.
+
+   - If you know HTML/CSS, you can contribute to the web pages of
+     Emacs and GNU ELPA.
+
+   - If you know C, you can contribute to a number of low-level
+     libraries and help us write Emacs primitives.
+
+** Which task can I take?
+#+INDEX: task
+   It depends on your Emacs knowledge and your interest.  Debbugs (see
+   below) is a huge reservoir of things to do.  Porting to new
+   platforms is also useful.  See also [[http://bzr.savannah.gnu.org/lh/emacs/trunk/annotate/head:/etc/TODO][etc/TODO]].  If you think of new
+   features to add to =etc/TODO=, please suggest them too.
+
+   Before contributing a new feature to Emacs, you should check to
+   make sure that the feature isn't already available.  (See [[http://lists.gnu.org/archive/html/emacs-devel/2013-04/msg00180.html][this
+   thread]].)  For example, typing =M-x apropos <RET> humor <RET>= lists
+   all functions and variables containing the string =humor=; typing
+   =M-x list-packages= command connects to the GNU ELPA
+   (http://elpa.gnu.org) ("Emacs Lisp Package Archive") server and
+   fetches the list of additional packages that it offers.  These are
+   GNU packages that are available for use with Emacs, but are
+   distributed separately.  It is also possible that the package is on
+   your system, but has not been loaded.  To see which packages are
+   available for loading, look through your computer's Lisp directory.
+
+** Document Your changes
+   Think carefully about whether your change requires updating the
+   documentation.  If it does, you can either do this yourself or add
+   an item to the NEWS file.
+
+   If you document your change in NEWS, please mark the NEWS entry
+   with the documentation status of the change: if you submit the
+   changes for the manuals, mark it with =+++=; if it doesn't need to
+   be documented, mark it with =---=; if it needs to be documented,
+   but you didn't submit documentation changes, leave the NEWS entry
+   unmarked.[fn:1]
+
+** Packaging
+#+INDEX: packaging
+   To be written.
+** Web Pages
+   You can also contribute to web pages of GNU Emacs and GNU ELPA.
+   They should follow our usual standards for web pages:
+
+   - Every page should have a copyright notice.
+
+   - Use lower-case HTML tags.
+
+   - All pages should have a notice saying that they are freely
+     distributable.
+
+   - The GNU web server has only free software available.  We prefer
+     that only free software be used to develop content for the GNU
+     web server.
+
+   - The GNU web server is interested first in content.  Substance is
+     more important than style.  The use of graphics should be
+     minimized so pages load fast over slow links.  Emacs is for
+     everyone, even those with slow Internet access or text-only
+     browsers.
+
+   - Before you take any graphics or text from another Web site,
+     please ask for permission to use it. It's polite to do so. It is
+     also essential for us to avoid copyright infringement.
+
+   - Please see the [[http://www.gnu.org/server/standards/README.translations.html][Translations README]] for information on
+     coordinating and submitting translations.
+
+   - Do not use backgrounds on our pages, as they make text
+     significantly harder to read.
+
+   - We follow the guidelines of [[http://www.anybrowser.org/campaign/][Best Viewed with Any Browser]]
+     campaign.
+** Some Coding Conventions
+   - Avoid using =defadvice= or =eval-after-load= for Lisp code to be
+     included in Emacs.
+
+   - Remove all trailing whitespace in all source and text files.  See
+     =delete-trailing-whitespace=, =fixup-whitespace= and
+     =whitespace-mode=.
+
+   - Use =?\s= in Lisp code for a space character.
+
+** Understanding Emacs Internals
+#+INDEX: internal of Emacs
+   The best way to understand Emacs Internals is to read the code, but
+   the node [[info:elisp#GNU%20Emacs%20Internals][info:elisp#GNU Emacs Internals]] in the Appendix of the
+   /Emacs Lisp Reference Manual/ may also help.
+
+** Standards/Tips
+#+INDEX: standards
+   - [[http://www.gnu.org/prep/standards/][GNU Coding Standards]]
+   - [[info:elisp#Tips]]
+ 
+
+* Designing
+#+INDEX: designing
+  You can design themes, icons and web pages for Emacs.
+
+
+* Documentation and Writing
+#+INDEX: documentation
+#+INDEX: writing
+  - Proof-reading the manuals and man pages.  That's also a great way
+    to learn more about Emacs.  This is usually done together with
+    reading the NEWS file to make sure that the manual has been
+    updated.
+
+  - Translating the tutorial into some other languages.
+
+  - Add documentation about some packages/features that aren't
+    mentioned in the manual or don't have their own manuals yet.
+
+  - Compare docstrings with the corresponding description in the
+    manuals (when applicable).  They usually shouldn't be identical,
+    but they should not contradict each other.  Generally the manual
+    gives a bit less details but more background/context.
+
+  Some tips:
+  - In Emacs tradition, we treat "point" as a proper name when it
+    refers to the current editing location.  It should not have an
+    article.  Thus, it is incorrect to write, "The point does not
+    move".  It should be, "Point does not move".  If you see "the
+    point" anywhere in Emacs documentation or comments, referring to
+    point, please fix it.
+
+  - Antinews is useful.  The usefulness of Antinews is to help people
+    who buy the printed manual and are still using the previous Emacs
+    version.  That's why we focus on the (eliminated) behavior of the
+    old version rather than on the new features.
+
+  - Emacs should not recommend, promote, or grant legitimacy to the
+    use of any non-free program.  We can’t stop some people from
+    writing proprietary programs, or stop other people from using
+    them, but we can and should refuse to advertise them to new
+    potential customers, or to give the public the idea that their
+    existence is ethical.
+
+  - Never introduce new terminology in the middle of a complex
+    description, where each successive sentence builds upon what the
+    preceding ones said.  Always use /exactly/ the same words as in
+    the preceding sentences.
+
+  - Good spelling is encouraged.
+
+  - Sentences should be separated by two spaces.
+
+  - Sentences should start with an uppercase letter.
+
+  - Don't mention in Antinews too many features absent in old
+    versions.  Since the purpose of Antinews is to help people use the
+    previous Emacs version, there is usually no need to mention
+    features that are simply absent in that version.  That situation
+    will be clear enough to users without help from the manual.  The
+    kind of change for which the user really needs help from Antinews
+    is where a feature works /differently/ in the previous version.
+    In those cases, the user might have trouble figuring out how to
+    use the old version without some sort of help.
+
+  - To indicate possession, write Emacs's rather than Emacs'.  See
+    http://lists.gnu.org/archive/html/emacs-devel/2012-02/msg00649.html
+
+  See also [[info:elisp#Documentation%20Tips][info:elisp#Documentation Tips]].
+
+
+* Submitting Patches
+#+INDEX: patch
+  You should mention the base revision or version of the code you used
+  for creating your patch.
+
+  When you have all these pieces, bundle them up in a mail message and
+  send it to the developers.  Sending it to [[mailto:bug-gnu-emacs@gnu.org][bug-gnu-emacs@gnu.org]]
+  (which is the bug/feature list) is recommended, because that list is
+  coupled to a tracking system that makes it easier to locate patches.
+  If your patch is not complete and you think it needs more
+  discussion, you might want to send it to [[mailto:emacs-devel@gnu.org][emacs-devel@gnu.org]]
+  instead.  If you revise your patch, send it as a followup to the
+  initial topic.
+
+** Description
+   - For bug fixes, a description of the bug and how your patch fixes
+     this bug.
+   - For new features, a description of the feature and your
+     implementation.
+** ChangeLog
+#+INDEX: changelog
+   A [[http://www.gnu.org/prep/standards/html_node/Change-Logs.html#Change-Logs][ChangeLog]] entry as plaintext (separate from the patch).  If
+   installing changes written by someone else, make the ChangeLog
+   entry in their name, not yours.  There is no need to make change
+   log entries for files such as NEWS, MAINTAINERS, and FOR-RELEASE.
+** The Patch Itself
+   Please use "Context Diff" format.  If you are accessing the Bazaar
+   repository, make sure your copy is up-to-date (e.g. with =bzr
+   pull=), then use
+   : bzr diff --no-aliases --diff-options=-cp
+   Else, use
+   : diff -cp OLD NEW
+   If your version of diff does not support these options, then get
+   the latest version of GNU Diff.
+** Mail Format
+   We prefer to get the patches as inline plain text.
+
+   Please be aware of line wrapping which will make the patch
+   unreadable and useless for us.  To avoid that, you can use MIME
+   attachments or, as a last resort, uuencoded gzipped text.
+
+** Reread your patch.
+
+** Do not mix changes
+   If you send several unrelated changes together, we will ask you to
+   separate them so we can consider each of the changes by itself.
+
+
+* Learning Resources
+#+INDEX: learn
+  I find that one of the largest hurdles for getting involved in any
+  project for me is lack of knowledge.
+
+  - Lisp:
+    + An Introduction to Programming in Emacs Lisp.  It is a simple
+      introduction to Emacs Lisp programming.  See [[info:eintr#Top]].
+
+    + GNU Emacs Common Lisp Emulation.  See [[info:cl#Top]].
+
+    + GNU Emacs Lisp Reference Manual.  See [[info:elisp#Top]].
+
+    + [[http://emacswiki.org/emacs/ElispCookbook][Elisp Cookbook]] is also a good resource.
+
+  - Emacs:
+    + CC Mode.  Emacs supports C programming well by default since
+      Emacs and many parts of the GNU system are written in C.  It
+      helps you edit Emacs source files containing C code.  See
+      [[info:ccmode#Top]].
+
+    + [[http://cedet.sourceforge.net/][CEDET]].  CEDET is a =Collection of Emacs Development Environment
+      Tools= written with the end goal of creating an advanced
+      development environment in Emacs.  It has many useful features
+      for development.
+
+    + [[http://www.emacswiki.org/emacs/Icicles][Icicles]].  Icicles is an Emacs library that enhances minibuffer
+      completion.  It has many good features for Emacs Lisp
+      Programmers and ordinary Emacs users.
+
+    + Tags Tables.  See [[info:emacs#Tags]].
+
+    + The Emacs Widget Library.  All customization types are
+      implemented as widgets.  See [[info:widget#Top]].
+
+  - Some libraries:
+    + [[http://developer.gnome.org/gtk3/unstable/][GTK+ 3 Reference Manual]], since GTK+ is the default X toolkit in
+      GNU Emacs.
+
+    + [[http://www.libtiff.org/libtiff.html][Using The TIFF Library]]
+
+    + [[http://giflib.sourceforge.net/intro.html][Introduction to GIFLIB]]
+
+  - [[http://www.gnu.org/software/texinfo/manual/texinfo/][GNU Texinfo Manual]].  Texinfo is the official documentation format of Emacs.
+
+  - GNU build system.  It helps Emacs developers make Emacs source code portable 
+    to many Unix-like systems.[fn:2][fn:3][fn:4]
+
+  - [[http://doc.bazaar.canonical.com/bzr.dev/en/user-reference/index.html][Bazaar User Reference]].
+
+  - [[http://ximbiot.com/cvs/manual/stable][HTML Cederqvist for CVS stable release]].  The web pages of Emacs
+    are kept in a CVS repository.
+
+  - [[http://sourceware.org/gdb/current/onlinedocs/gdb/][GDB User Manual]].  Although Emacs can be debugged with MSVC and
+    other debuggers, GDB is recommended.
+
+  - [[http://www.gnu.org/software/make/manual/][GNU Make Manual]].  Make is a tool which controls the generation of
+    executables and other non-source files of Emacs from the source
+    files.
+
+  - [[http://gcc.gnu.org/onlinedocs/][GCC online documentation]].  The GNU Compiler Collection (GCC)
+    is a compiler system produced by the GNU Project supporting
+    various programming languages.
+
+  - [[http://www.gnu.org/software/guile/manual/][GNU Guile Reference Manual]].  Guile, a dialect of Scheme, is the
+    native language of the GNU standard extension language
+    interpreter.  Making Emacs support guile will provide a better
+    programming environment for both Emacs users and Guile users.  See
+    also [[http://www.advogato.org/article/550.html][this article]].
+
+  - [[http://www.gnu.org/software/emacs/manual/html_node/ediff/][Ediff]] and [[http://www.gnu.org/software/diffutils/manual/html_node/index.html#Top][GNU Diffutils]] manuals.  They can show the differences
+    between files and update files.
+
+  - [[http://www.gnu.org/software/grep/manual/][GNU Grep Manual]].  The =grep= command searches one or more input
+    files for lines containing a match to a specified pattern.  It is
+    a very useful tool and often used when developing Emacs.
+
+  - Subcribe to [[https://lists.gnu.org/mailman/listinfo/emacs-diffs][Emacs-diffs]] and [[https://lists.gnu.org/mailman/listinfo/emacs-elpa-diffs][Emacs-elpa-diffs]].  You can pick out
+    entries that catch my attention and skim the commit.  Through this
+    action, you can know:
+    + names of people involved in something you're intrigued by
+
+    + locations in the tree of code that you're interested in
+
+    + many other useful information
+
+
+* Bug Tracker
+#+INDEX: bug tracker
+  We use [[http://debbugs.gnu.org/][GNU Bug Tracker]]([[http://en.wikipedia.org/wiki/Debian_bug_tracking_system][Debbugs]]).  For
+  a list of all bugs, see http://debbugs.gnu.org/db/pa/lemacs.html
+  This is a static page, updated once a day.
+
+  There is also a dynamic list, generated on request.  This accepts
+  various options, eg to see the most recent bugs:
+  http://debbugs.gnu.org/cgi/pkgreport.cgi?newest=100
+
+  You can also follow the links on the front page http://debbugs.gnu.org .
+
+** How to report a bug?
+   Use =M-x report-emacs-bug=, or send mail to
+   [[mailto:bug-gnu-emacs@gnu.org][bug-gnu-emacs@gnu.org]].  If you want to Cc someone, use an
+   =X-Debbugs-CC= header instead.  Before sending a bug report, make
+   sure you have read [[info:emacs#Bugs]].  You can also read this great
+   text: "[[http://www.chiark.greenend.org.uk/~sgtatham/bugs.html][How to Send Bug Reports Effectively]]".
+
+** How to comment on a bug?
+   Reply to a mail on the bug-gnu-emacs list in the normal way.  Or
+   send a mail to 123@debbugs.gnu.org.
+
+   If the bug is old and closed, you may have to unarchive it first.
+
+   Send a mail to [[mailto:control@debbugs.gnu.org][control@debbugs.gnu.org]] with
+   : unarchive 123
+   on the first line of the body.
+
+** How to close a bug?
+#+INDEX: close a bug
+   Send a mail to 123-done@debbugs.gnu.org.  In the body, explain why
+   the bug is being closed.
+
+** How to set bug meta-data?
+   By mailing commands to [[mailto:control@debbugs.gnu.org][control@debbugs.gnu.org]].  Place commands
+   at the start of the message body, one per line.
+   #+begin_example
+   severity 123 serious|important|normal|minor|wishlist
+   tags 123 moreinfo|unreproducible|wontfix|patch
+   #+end_example
+
+
+* Copyright
+#+INDEX: copyright
+  The Free Software Foundation is the copyright holder for GNU Emacs.
+  The FSF is a nonprofit with a worldwide mission to promote computer
+  user freedom and to defend the rights of all free software users.
+
+  Generally speaking, for non-trivial contributions to GNU Emacs we
+  require that the copyright be assigned to the Free Software
+  Foundation.  For the reasons behind this, see:
+  http://www.gnu.org/licenses/why-assign.html.
+
+  If you want to contribute to Emacs and do copyright assignment, you
+  need to complete [[ http://git.savannah.gnu.org/gitweb/?p=gnulib.git;a=tree;f=doc/Copyright;hb=HEAD][this form]], and send it to [[mailto:assign@gnu.org][assign@gnu.org]].  The FSF
+  will send you the assignment contract that both you and the FSF will
+  sign. Please let Emacs maintainers know when this process is
+  complete.
+
+  Every non-trivial file distributed through the Emacs repository
+  should be self-explanatory in terms of copyright and license.
+
+  The definition of triviality is a little vague, but a rule of thumb
+  is that any file with less than 10 lines of actual content is
+  trivial.  If a file is auto-generated (E.g., ldefs-boot.el) from
+  another one in the repository, then it does not really matter about
+  adding a copyright statement to the generated file.
+
+  Legal advice says that we could, if we wished, put a license notice
+  even in trivial files, because copyright law in general looks at the
+  overall work as a whole.  It is not /necessary/ to do so, and RMS
+  prefers that we do not.  This means one needs to take care that
+  trivial files do not grow and become non-trivial without having a
+  license added.  NB consequently, if you add a lot of text to a small
+  file, consider whether your changes have made the file worthy of a
+  copyright notice, and if so, please add one.
+
+  It can be helpful to put a reminder comment at the start of a
+  trivial file, eg: "add a license notice if this grows to > 10 lines
+  of code".
+
+  Copyright changes should be propagated to any associated
+  repositories (eg Gnus, MH-E).
+
+  All README (and other such text files) that are non-trivial should
+  contain copyright statements and GPL license notices, exactly as
+  =.el= files do (see e.g. README in the top-level directory).  Before
+  2007, we used a simple, short statement permitting copying and
+  modification provided legal notices were retained.  In Feb 2007 we
+  switched to the standard GPL text, on legal advice.
+
+  For image files, the copyright and license details should be
+  recorded in a README file in each directory with images.
+
+
+* Emacs repositories
+#+INDEX: repository
+  There are three official Emacs repositories: [[http://bzr.savannah.gnu.org/lh/emacs/][Bazaar]], [[http://web.cvs.savannah.gnu.org/viewvc/?root%3Demacs][CVS]], and [[http://git.savannah.gnu.org/cgit/emacs.git][Git]].
+
+  The latest version of Emacs can be downloaded using GNU Bazaar from
+  the [[http://savannah.gnu.org/projects/emacs][Savannah web site]].  It is important to write your patch based on
+  the latest version.  If you start from an older version, your patch
+  may be outdated (so that Emacs developers will have a hard time
+  applying it), or changes in Emacs may have made your patch
+  unnecessary.
+
+** Building Emacs
+#+INDEX: build
+    #+begin_example
+      $ cd /where/you/unpacked/or/branched/emacs/
+      $ ./autogen.sh    # not needed when installing from tarball
+      $ ./configure
+      $ make
+      $ make install # Quite often a `sudo make install' is necessary
+    #+end_example
+    I recommend using =-jPROC= flag for make where PROC is the number
+    of CPU core you have in order to speed up the compilation.
+
+    Building Emacs on non-Posix platforms requires tools that aren't
+    part of the standard distribution of the OS.  The
+    platform-specific README files and installation instructions
+    should list the required tools.  I'll add more stuff here later.
+** Emacs Directory Tree
+#+INDEX: directory tree
+*** src
+    It holds the C code for Emacs (the Emacs Lisp interpreter and its
+    primitives, the redisplay code, and some basic editing functions).
+*** lisp
+    It holds the Emacs Lisp code for Emacs (most everything else).
+*** leim
+    It holds the library of Emacs input methods, Lisp code and
+    auxiliary data files required to type international characters
+    which can't be directly produced by your keyboard.
+*** lib
+    It holds source code for libraries used by Emacs and its
+    utilities.
+*** lib-src
+    It holds the source code for some utility programs for use by or
+    with Emacs, like =movemail= and =etags=.
+*** etc
+    It holds miscellaneous architecture-independent data files Emacs
+    uses, like the tutorial text and tool bar images.  The contents of
+    the =lisp=, =leim=, =info=, and =doc= subdirectories are
+    architecture-independent too.
+*** info
+    It holds the Info documentation tree for Emacs.
+*** doc/emacs
+    It holds the source code for the Emacs Manual.  If you modify the
+    manual sources, you will need the =makeinfo= program to produce an
+    updated manual.  =makeinfo= is part of the GNU Texinfo package;
+    you need a suitably recent version of Texinfo.
+*** doc/lispref
+    It holds the source code for the Emacs Lisp reference manual.
+*** doc/lispintro
+    It holds the source code for the Introduction to Programming in
+    Emacs Lisp manual.
+*** msdos
+    It holds configuration files for compiling Emacs under MS-DOS
+    (also known as "MS-DOG").
+*** nextstep
+    It holds instructions and some other files for compiling the
+    Nextstep port of Emacs, for GNUstep and OS X Cocoa.
+*** nt
+    It holds various command files and documentation files that
+    pertain to building and running Emacs on Windows (also known as
+    "Losedows").
+*** oldXMenu
+    Most of the files in this directory are originally from the X11R2
+    XMenu library, distributed by MIT under the terms in the file
+    copyright.h.
+
+    As of Release 2 of the X Window System, Version 11 from MIT, the
+    XMenu library is no longer supported.  It is not used in any
+    software supplied by MIT and its use is not encouraged.
+*** autogen
+    This directory contains some pre-built generated files.
+*** lwlib
+    This subdirectory contains the Lucid Widget Library, which
+    provides a uniform interface to a few different X toolkits.  It is
+    not considered part of GNU Emacs.
+*** test
+    It holds tests for various aspects of Emacs's functionality.
+** Write Access
+#+INDEX: write access
+  Once you become a frequent contributor to Emacs, we can consider
+  giving you write access to the Bazaar repository.  Feel free to use
+  this power, but please try to be extra careful and prove yourself
+  worthy of this privilege:
+
+  - Each commit should correspond to a single change (whether spread
+    over multiple files or not).  Do not mix different changes in the
+    same commit[fn:5].
+
+  - Commit all changed files at once with a single log message.  This
+    is pretty easy using vc-dir now.
+
+  - Keep commit log lines to ~ 80 chars in length.  The first line
+    should be a summary that can stand alone.
+
+  - Make the log message describe the entire changeset, perhaps
+    including relevant ChangeLog entries.
+
+  - Don't phrase log messages assuming the filename is known, because
+    in non-file-oriented systems (everything modern other than CVS),
+    the log listing tends to be treated as global information, and the
+    connection with specific files is less explicit.
+
+  - Only install changes whose code follows the usual coding
+    conventions.
+
+  - If you want to add a new file to Emacs:
+
+    + Make sure the file matches the standard Emacs template (header
+      format, copyright and license notice, etc).
+
+    + Make sure the filename does not cause the MS-DOS port any
+      problems (8+3).
+
+    + If appropriate, check that the file compiles OK and that Emacs
+      builds fine with it.
+
+    + If a major contribution, consider adding an entry to the
+      Acknowledgments in doc/emacs/emacs.texi and ack.texi.
+
+    + If appropriate, update =make-dist= (not needed with "standard"
+      file names, such as *.el).
+
+  - Always provide a good commit message (copied into or from the
+    ChangeLog whenever applicable), and properly labelling the author
+    of the code.
+
+  - Be sure your change is accepted as being for the better by the
+    package's maintainer.  If you have the slightest doubt that maybe
+    the maintainer won't like it, or would like it to be different,
+    send your patch for review before installing it.
+
+  - And make extra sure that all the code you install has the proper
+    copyright: if it is not your own code, make sure the author has
+    signed the relevant copyright papers (for non-trivial
+    contributions).
+
+  - For historical interest only, here is an old-style advice for CVS
+    logs:
+    http://lists.gnu.org/archive/html/emacs-devel/2007-12/msg01208.html
+
+  If you have doubt about any of those points, send your patch for
+  review at [[mailto:emacs-devel@gnu.org][emacs-devel@gnu.org]] (or [[mailto:bug-gnu-emacs@gnu.org][bug-gnu-emacs@gnu.org]]).
+
+*** Bazaar Branches
+#+INDEX: branches
+**** trunk
+#+INDEX: trunk
+    To be written.
+**** emacs-nn
+#+INDEX: emacs-nn branch
+    To be written.
+**** elpa
+#+INDEX: elpa branch
+    The GNU Emacs package archive, at elpa.gnu.org, is managed using a
+    Bzr branch named "elpa", hosted on Savannah.  To check it out:
+
+    #+begin_example
+    $ bzr branch bzr+ssh://USER@bzr.savannah.gnu.org/emacs/elpa elpa
+    $ cd elpa
+    $ echo "public_branch = bzr+ssh://USER@bzr.savannah.gnu.org/emacs/elpa" >> .bzr/branch/branch.conf
+    $ bzr bind bzr+ssh://USERNAME@bzr.savannah.gnu.org/emacs/elpa
+    [create task branch for edits, etc.]
+    #+end_example
+**** xwidget
+#+INDEX: xwidget branch
+    To be written.
+**** concurrency
+#+INDEX: concurrency branch
+    To be written.
+**** mh-e
+#+INDEX: mh-e branch
+    To be written.
+
+
+* Emacs Releases
+#+INDEX: release
+  - You should identify each release with a pair of version numbers, a
+    major version and a minor.
+
+  - Before a new release the Emacs maintainers make a “pretest”
+    release of Emacs.[fn:6] Sometime before the release of a new major
+    version of Emacs (E.g., 23.4), a "feature freeze" is imposed on
+    the trunk.  No new features may be added after this point.  This
+    is usually some months before the release.
+
+  - Non-source files that might actually be modified by building and
+    installing the program should /never/ be included in the
+    distribution.
+
+
+* Emacs in GSoC
+#+INDEX: GSoC
+  Google Summer of Code is a program that offers student developers
+  stipends to write code for various free software projects.  We need
+  to see a clearly delimited, contained piece of work.  So if we can’t
+  understand or define the work, the proposal will be thrown out.  The
+  goal is to write code, not documentation.  And please remember that
+  other peoples' time is just as valuable as your own.
+
+  See [[http://www.gnu.org/software/soc-projects/guidelines.html][GNU guidelines for Summer of Code projects]].
+** People
+   We need:
+   + mentors, which follow students’ progress and help them.  Each project needs a mentor.
+
+   + students which have interest on a particular project.
+
+
+* Education
+#+INDEX: education
+  Help build a generation of Emacs users by teaching others how the
+  Emacs works.
+
+
+* About This Guide
+#+INDEX: about
+   Long-term collaboration tends to turn strangers into friends, and
+   this is the reason for my writing this guide.  Translations and
+   suggestions are welcomed.  I will carry a link to it when you send
+   me a URI.  You should include a link to my original.  If you have
+   problems/questions about contributing to GNU Emacs, you can contact
+   me or post it to [[mailto:emacs-devel@gnu.org][emacs-devel@gnu.org]].
+
+   You can contact me using (please send plain text mail, not HTML):
+   =xfq DOT free AT gmail DOT com=
+
+   - TODO
+
+     + Add information about copyright disclaimer
+
+     + Enrich the glossary
+
+     + Add information about Emacs's Bazaar, Git and CVS repositories
+
+     + Convert this guide into Texinfo format
+
+     + Add information about Emacs in GSoC
+
+     + More information about Preparing Lisp code for distribution
+
+     + Translate this guide into Chinese
+
+     + More information about Emacs branch policy
+
+     + Information for debugging Emacs
+
+     + Developing the web pages of Emacs
+
+     + Unicode-related guidelines
+
+     + Add more stuff about building Emacs
+
+
+* Glossary
+#+INDEX: glossary
+*** +1
+    The shortest way in the geek world to say "I agree with this" or
+    "This is a great idea".
+
+*** -1
+    The opposite of +1.  Often accompanied by an explanation why.
+
+*** Committer
+    An individual who has special rights in a free software
+    project.
+
+*** DVCS
+    Distributed version control system. A version control system that
+    does not require talking to a centralized server.
+
+*** GSoC
+    Google Summer of Code
+
+*** IDE
+    Integrated Development Environment
+
+*** IRC
+    Internet Relay Chat
+
+*** Lurk  
+    To spend some time watching. Often used in reference to a mailing
+    list where you will read the posts but not make any posts yourself
+    or an IRC channel where you watch how people interact but don't
+    say anything.
+
+*** UTC
+    Coordinated Universal Time.
+
+
+* Thanks
+  I would like to thank:
+
+  - Dmitry Antipov
+
+  - Miles Bader
+
+  - Juanma Barranquero
+
+  - Jan D.
+
+  - Paul Eggert
+
+  - Juri Linkov
+
+  - Stefan Monnier
+
+  - Glenn Moris
+
+  - Richard Stallman
+
+  - Chong Yidong
+
+  - Eli Zaretskii
+
+  They helped and inspired me a lot.  Others too numerous to mention
+  have helped me learn Emacs.  I thank them for their generosity as
+  well.
+
+
+* Footnotes
+
+[fn:1] These marks are checked by the Emacs maintainers to make sure
+every change was reflected in the manuals.
+
+[fn:2] http://www.gnu.org/software/autoconf/manual/index.html
+
+[fn:3] http://www.gnu.org/software/automake/manual/automake.html
+
+[fn:4] http://www.gnu.org/software/gnulib/manual/
+
+[fn:5] For example, adding a feature in one file, fixing a bug in
+another should be two commits, not one.
+
+[fn:6] http://alpha.gnu.org/gnu/emacs/pretest/
+
