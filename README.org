@@ -44,8 +44,11 @@
     search the Emacs manuals before anything else.  If the manuals
     don't have your answers, you can use other sources.  Some good
     ones:
+
     - [[https://savannah.gnu.org/mail/?group=emacs][Mailing list threads]]
+
     - [[http://www.gnu.org/manual/manual.html][Other GNU Manuals]]
+
     - [[http://debbugs.gnu.org/][GNU Bug Tracker]]
 *** Doing investigation
     If you can't find previous cases of the issue happening, here are
