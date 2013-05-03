@@ -326,7 +326,7 @@
    log entries for files such as NEWS, MAINTAINERS, and FOR-RELEASE.
 
    Use =C-x 4 a= -
-   [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Change-Log-Commands.html|add-change-log-entry-other-window]]
+   [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Change-Log-Commands.html][add-change-log-entry-other-window]]
    to add a ChangeLog entry for the file you are working on.
 ** The Patch Itself
    Please use "Context Diff" format.  If you are accessing the Bazaar
