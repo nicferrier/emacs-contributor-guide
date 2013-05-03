@@ -693,16 +693,16 @@
     To be written.
 **** elpa
 #+INDEX: elpa branch
-    The GNU Emacs package archive, at elpa.gnu.org, is managed using a
-    Bzr branch named "elpa", hosted on Savannah.  To check it out:
+The GNU Emacs package archive, at elpa.gnu.org, is managed using a
+ Bzr branch named "elpa", hosted on Savannah.  To check it out:
 
-    #+begin_example
-    $ bzr branch bzr+ssh://USER@bzr.savannah.gnu.org/emacs/elpa elpa
-    $ cd elpa
-    $ echo "public_branch = bzr+ssh://USER@bzr.savannah.gnu.org/emacs/elpa" >> .bzr/branch/branch.conf
-    $ bzr bind bzr+ssh://USERNAME@bzr.savannah.gnu.org/emacs/elpa
-    [create task branch for edits, etc.]
-    #+end_example
+#+begin_example
+$ bzr branch bzr+ssh://USER@bzr.savannah.gnu.org/emacs/elpa elpa
+$ cd elpa
+$ echo "public_branch = bzr+ssh://USER@bzr.savannah.gnu.org/emacs/elpa" >> .bzr/branch/branch.conf
+$ bzr bind bzr+ssh://USERNAME@bzr.savannah.gnu.org/emacs/elpa
+[create task branch for edits, etc.]
+#+end_example
 **** xwidget
 #+INDEX: xwidget branch
     To be written.
